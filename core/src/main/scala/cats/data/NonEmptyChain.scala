@@ -434,9 +434,9 @@ class NonEmptyChainOps[A](private val value: NonEmptyChain[A])
    * {{{
    * scala> import cats.data.NonEmptyChain
    * scala> import cats.syntax.all._
-   * scala> val nel = NonEmptyChain.of(12, -2, 3, -5)
+   * scala> val nec = NonEmptyChain.of(12, -2, 3, -5)
    * scala> val expectedResult = List(NonEmptyChain.of(12, -2), NonEmptyChain.of(3, -5))
-   * scala> val result = nel.grouped(2)
+   * scala> val result = nec.grouped(2)
    * scala> result.toList === expectedResult
    * res0: Boolean = true
    * }}}

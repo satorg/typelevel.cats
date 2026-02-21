@@ -339,9 +339,9 @@ final class NonEmptySeq[+A] private (val toSeq: Seq[A]) extends AnyVal with NonE
    * {{{
    * scala> import cats.data.{NonEmptyMap, NonEmptySeq}
    * scala> import cats.syntax.all._
-   * scala> val nel = NonEmptySeq.of(12, -2, 3, -5)
+   * scala> val neSeq = NonEmptySeq.of(12, -2, 3, -5)
    * scala> val expectedResult = NonEmptyMap.of(false -> NonEmptySeq.of(-2, -5), true -> NonEmptySeq.of(12, 3))
-   * scala> val result = nel.groupByNem(_ >= 0)
+   * scala> val result = neSeq.groupByNem(_ >= 0)
    * scala> result === expectedResult
    * res0: Boolean = true
    * }}}
@@ -355,9 +355,9 @@ final class NonEmptySeq[+A] private (val toSeq: Seq[A]) extends AnyVal with NonE
    * {{{
    * scala> import cats.data.NonEmptySeq
    * scala> import cats.syntax.all._
-   * scala> val nel = NonEmptySeq.of(12, -2, 3, -5)
+   * scala> val neSeq = NonEmptySeq.of(12, -2, 3, -5)
    * scala> val expectedResult = List(NonEmptySeq.of(12, -2), NonEmptySeq.of(3, -5))
-   * scala> val result = nel.grouped(2)
+   * scala> val result = neSeq.grouped(2)
    * scala> result.toList === expectedResult
    * res0: Boolean = true
    * }}}

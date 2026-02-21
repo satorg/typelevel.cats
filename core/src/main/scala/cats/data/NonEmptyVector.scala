@@ -332,9 +332,9 @@ final class NonEmptyVector[+A] private (val toVector: Vector[A])
    * {{{
    * scala> import cats.data.{NonEmptyMap, NonEmptyVector}
    * scala> import cats.syntax.all._
-   * scala> val nel = NonEmptyVector.of(12, -2, 3, -5)
+   * scala> val nev = NonEmptyVector.of(12, -2, 3, -5)
    * scala> val expectedResult = NonEmptyMap.of(false -> NonEmptyVector.of(-2, -5), true -> NonEmptyVector.of(12, 3))
-   * scala> val result = nel.groupByNem(_ >= 0)
+   * scala> val result = nev.groupByNem(_ >= 0)
    * scala> result === expectedResult
    * res0: Boolean = true
    * }}}
@@ -348,9 +348,9 @@ final class NonEmptyVector[+A] private (val toVector: Vector[A])
    * {{{
    * scala> import cats.data.NonEmptyVector
    * scala> import cats.syntax.all._
-   * scala> val nel = NonEmptyVector.of(12, -2, 3, -5)
+   * scala> val nev = NonEmptyVector.of(12, -2, 3, -5)
    * scala> val expectedResult = List(NonEmptyVector.of(12, -2), NonEmptyVector.of(3, -5))
-   * scala> val result = nel.grouped(2)
+   * scala> val result = nev.grouped(2)
    * scala> result.toList === expectedResult
    * res0: Boolean = true
    * }}}
